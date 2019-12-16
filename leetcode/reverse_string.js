@@ -1,17 +1,18 @@
 // https://leetcode.com/problems/reverse-string/submissions/
 
 var reverseString = function(s) {
-  let left = 0;
-  let right = s.length - 1;
-
-  while (left < right) {
-    let temp = s[left]
-    s[left] = s[right]
-    s[right] = temp
-
-    left++
-    right--
+  for (let left = 0, right = s.length-1; left < right; left++, right--) {
+      let temp = s[left]
+      s[left] = s[right]
+      s[right] = temp
   }
-
-  return s
 };
+
+
+// 2-liner
+
+// var reverseString = function(s) { 
+//   for (let i = 0, j = s.length-1; i < j; i++, j--) {
+//       [s[i], s[j]] = [s[j], s[i]]
+//   }
+// };
